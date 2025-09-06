@@ -164,3 +164,20 @@ input[type="email"]:focus {
 .carousel-control-next-icon {
   filter: drop-shadow(0 0 2px #fff);
 }
+
+.banners-laterales {
+  margin-top: 70px; /* Ajusta según la altura del navbar y hero */
+}
+.bg-dark-blur {
+  background: #181818e6;
+  backdrop-filter: blur(2px);
+  border-radius: 18px;
+}
+
+/* Fondo gamer oscuro para columnas laterales y central */
+.bg-gamer-dark {
+  background: linear-gradient(135deg, #18181b 0%, #23272f 100%);
+  min-height: 100vh;
+  border-radius: 0;
+  box-shadow: 0 0 24px #0f0f0f88;
+}
