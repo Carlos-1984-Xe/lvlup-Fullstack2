@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level-Up Gamer | Tienda Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="src/styles/style.css" />
+</head>
+<body class="bg-light">
+  <!-- Header / Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <img src="img/Logo Lvl Up.PNG" alt="Level-Up Gamer Logo" width="100" height="100" class="me-2" />
+        Level-Up Gamer
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-3">
+          <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#"><i class="bi bi-cart"></i> Carrito (0)</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Iniciar sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Registrar usuario</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Hero Section -->
+<section class="py-5 bg-secondary bg-opacity-10">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bold">TIENDA ONLINE</h1>
+        <p class="lead hero-text">Bienvenido a Level-Up Gamer, tu tienda líder en productos para gamers en Chile. Descubre los mejores juegos, accesorios y tecnología para potenciar tu experiencia.</p>
+        <a href="#productos" class="btn btn-dark btn-lg mt-3">Ver productos</a>
+      </div>
+      <div class="col-md-6">
+
+        <!-- Carrusel de categorías -->
+        <div class="bg-light border rounded" style="height: 250px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <div id="mainCarousel" class="carousel slide w-100 h-100" data-bs-ride="carousel">
+            <div class="carousel-inner h-100">
+              <div class="carousel-item active h-100">
+                <img src="https://i0.wp.com/www.magicsur.cl/blog/wp-content/uploads/2018/11/portada1.jpg?w=1000&ssl=1" class="d-block w-100 h-100" style="object-fit: cover;" alt="Juegos de Mesa">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Juegos de Mesa</h5>
+                </div>
+              </div>
+              <div class="carousel-item h-100">
+                <img src="https://gamerstyle.com.mx/wp-content/uploads/2020/04/Consolas-de-videojuegos.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Consolas">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Consolas</h5>
+                </div>
+              </div>
+              <div class="carousel-item h-100">
+                <img src="https://i.pinimg.com/736x/27/0e/12/270e12e7c5ddbdc54c3345928ab2b9a9.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Computadores Gamer">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Computadores Gamer</h5>
+                </div>
+              </div>
+              <div class="carousel-item h-100">
+                <img src="https://images.secretlab.co/theme/common/home-featured-ml.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Sillas Gamer">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Sillas Gamer</h5>
+                </div>
+              </div>
+              <div class="carousel-item h-100">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_829207-MLC72263743361_102023-AB-polerones-roblox-gamer-4-nins-adultos.webp" class="d-block w-100 h-100" style="object-fit: cover;" alt="Accesorios">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Accesorios</h5>
+                </div>
+              </div>
+            </div>
+            <!-- Flechas de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Catálogo de productos -->
+<section class="py-5" id="productos">
+  <div class="container">
+    <h2 class="mb-4 fw-bold">Productos destacados del Mes</h2>
+    <div class="row g-4">
+      <!-- Producto ejemplo -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100">
+          <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px; overflow: hidden; border-radius: 8px;">
+            <img src="https://media.falabella.com/falabellaCL/123069773_01/w=1500,h=1500,fit=pad"
+                 alt="Catan"
+                 class="w-100 h-100"
+                 style="object-fit: cover; border-radius: 8px;" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Catan</h5>
+            <p class="card-text">Un clásico juego de estrategia.</p>
+            <p class="fw-bold mb-2">$29.990 CLP</p>
+            <button class="btn btn-outline-dark w-100">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- Repite para más productos -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="card h-100">
+          <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px; overflow: hidden; border-radius: 8px;">
+            <img src="https://cl-dam-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/256x0/filters:quality(75)/paris/867533999/variant/images/90df5ff7-61de-4449-8661-2d1717dc77b7/867533999-0000-002.jpg"
+                 alt="Controlador Xbox Series X"
+                 class="w-100 h-100"
+                 style="object-fit: cover; border-radius: 8px;" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Controlador Xbox Series X</h5>
+            <p class="card-text">Comodidad y precisión para gamers.</p>
+            <p class="fw-bold mb-2">$59.990 CLP</p>
+            <button class="btn btn-outline-dark w-100">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      <!-- ...más productos -->
+       <!-- Producto 3 -->
+  <div class="col-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px; overflow: hidden; border-radius: 8px;">
+        <img src="https://cl-cenco-pim-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/1920x0/prd-cl/product-medias/fdaaf40f-0832-48e6-bb68-11a285b0efb4/MK5VI9D93J/MK5VI9D93J-1/1702489938153-MK5VI9D93J-1-3.jpg"
+             alt="Silla Gamer"
+             class="w-100 h-100"
+             style="object-fit: cover; border-radius: 8px;" />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Silla Gamer Oficina Krone XL</h5>
+        <p class="card-text">Reclinable + Masaje + Apoyapiés - Camel.</p>
+        <p class="fw-bold mb-2">$149.990 CLP</p>
+        <button class="btn btn-outline-dark w-100">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+  <!-- Producto 4 -->
+  <div class="col-6 col-md-4 col-lg-3">
+    <div class="card h-100">
+      <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px; overflow: hidden; border-radius: 8px;">
+        <img src="https://media.spdigital.cl/thumbnails/products/1753449762314-B1_9cdf6c26_thumbnail_512.png"
+             alt="Computador Gamer"
+             class="w-100 h-100"
+             style="object-fit: cover; border-radius: 8px;" />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">PC Gamer ARGH29</h5>
+        <p class="card-text">Ryzen 5 5600X, 32GB RGB, 1TB NVMe, RTX 5060 8GB, Wi-Fi, Full RGB</p>
+        <p class="fw-bold mb-2">$1.242.130 CLP</p>
+        <button class="btn btn-outline-dark w-100">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-dark border-top py-4 mt-5">
+  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+    <div>
+      <span class="fw-bold">Level-Up Gamer</span> &copy; 2025. Todos los derechos reservados.
+    </div>
+    <div>
+      <a href="#" class="me-2">Category 1</a>
+      <a href="#" class="me-2">Category 2</a>
+      <a href="#">Category 3</a>
+    </div>
+    <form class="d-flex align-items-center">
+      <input type="email" class="form-control form-control-sm me-2" placeholder="Enter Email" />
+      <button class="btn btn-dark btn-sm">Suscribirse</button>
+    </form>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
