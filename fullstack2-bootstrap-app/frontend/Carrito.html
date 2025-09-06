@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carrito de Compras</title>
+  <link rel="stylesheet" href="src/styles/style.css" />
+  <link rel="icon" href="src/images/logo.png" />
+  <style>
+    body { background: #212529; color: #fff; }
+    .carrito-container { max-width: 700px; margin: 40px auto; background: #343a40; border-radius: 12px; padding: 32px; }
+    .carrito-lista { list-style: none; padding: 0; }
+    .carrito-lista li { background: #23272b; margin-bottom: 16px; border-radius: 8px; padding: 16px; display: flex; align-items: center; }
+    .carrito-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; margin-right: 20px; background: #fff; }
+    .carrito-btns { display: flex; gap: 16px; margin-top: 32px; justify-content: center; }
+    .logo-header { display: flex; align-items: center; gap: 12px; margin-bottom: 32px; }
+    .logo-header img { width: 48px; height: 48px; }
+    .logo-header h1 { font-size: 2rem; margin: 0; color: #fff; }
+    .empty-msg { text-align: center; color: #ccc; margin: 40px 0; }
+  </style>
+</head>
+<body>
+  <!-- Header/logo igual que en otras páginas -->
+  <header class="logo-header">
+    <img src="img/Logo Lvl Up.PNG" alt="Logo LVLUP" />
+    <h1>LVLUP - Carrito de Compras</h1>
+  </header>
+  <div class="carrito-container">
+    <h2>Productos en tu carrito</h2>
+    <ul id="lista-carrito" class="carrito-lista"></ul>
+    <div class="empty-msg" id="carrito-vacio" style="display:none;">No hay productos en el carrito.</div>
+    <div class="carrito-btns">
+      <button id="proceder-compra" class="btn btn-success">Proceder compra</button>
+      <button id="borrar-carrito" class="btn btn-danger">Borrar carrito</button>
+    </div>
+  </div>
+  <script src="src/Productos.js"></script>
+  <script>
+    // Obtener IDs del carrito
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const lista = document.getElementById('lista-carrito');
+    const vacio = document.getElementById('carrito-vacio');
+
+    function renderCarrito() {
+      lista.innerHTML = '';
+      if (carrito.length === 0) {
+        vacio.style.display = 'block';
+        return;
+      }
+      vacio.style.display = 'none';
+      carrito.forEach(id => {
+        const producto = productos.find(p => p.id === id);
+        if (producto) {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="carrito-img" />
+            <div>
+              <h5 style="margin:0 0 8px 0;">${producto.nombre}</h5>
+              <p style="margin:0;"><strong>Precio:</strong> ${producto.precio}</p>
+            </div>
+          `;
+          lista.appendChild(li);
+        }
+      });
+    }
+
+    renderCarrito();
+
+    // Botón proceder compra
+    document.getElementById('proceder-compra').onclick = function() {
+      if (carrito.length === 0) {
+        alert('El carrito está vacío.');
+        return;
+      }
+      alert('¡Compra realizada con éxito!');
+      localStorage.removeItem('carrito');
+      carrito = [];
+      renderCarrito();
+    };
+
+    // Botón borrar carrito
+    document.getElementById('borrar-carrito').onclick = function() {
+      if (carrito.length === 0) {
+        alert('El carrito ya está vacío.');
+        return;
+      }
+      if (confirm('¿Seguro que deseas borrar todo el carrito?')) {
+        localStorage.removeItem('carrito');
+        carrito = [];
+        renderCarrito();
+      }
+    };
+  </script>
