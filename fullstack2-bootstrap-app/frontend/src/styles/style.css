@@ -181,3 +181,15 @@ input[type="email"]:focus {
   border-radius: 0;
   box-shadow: 0 0 24px #0f0f0f88;
 }
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+.dropdown-menu {
+  background-color: #212529; /* oscuro */
+}
+.dropdown-item.text-light:hover {
+  background-color: #343a40;
+  color: #fff;
+}
