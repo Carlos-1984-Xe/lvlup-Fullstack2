@@ -193,3 +193,32 @@ input[type="email"]:focus {
   background-color: #343a40;
   color: #fff;
 }
+
+.detalle-img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.descripcion-marco {
+  background: #23272f;
+  color: #e0e0e0;
+  border-radius: 10px;
+  border: 2px solid #39FF14;
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(30,144,255,0.08);
+  font-size: 1.1rem;
+}
+
+.carrito-container.vacio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
