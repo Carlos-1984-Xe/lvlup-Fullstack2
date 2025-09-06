@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detalle de Producto</title>
+  <link rel="stylesheet" href="src/styles/style.css" />
+  <style>
+    .detalle-img {
+      width: 400px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto 24px auto;
+      background: #f8f9fa;
+    }
+    #detalle-producto {
+      text-align: center;
+      max-width: 600px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="detalle-producto"></div>
+  <script src="src/Productos.js"></script>
+  <script>
+    // Obtener el id de la URL
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    // Buscar el producto en la lista
+    const producto = productos.find(p => p.id === id);
+
+    // Mostrar los datos
+  if (producto) {
+    document.getElementById('detalle-producto').innerHTML = `
+      <h1>${producto.nombre}</h1>
+      <img src="${producto.imagen}" alt="${producto.nombre}" class="detalle-img" />
+      <p>${producto.descripcion}</p>
+      <p><strong>Precio:</strong> ${producto.precio}</p>
+      <button id="agregar-carrito" class="btn btn-success mt-3">Agregar producto</button>
+    `;
+
+    // Evento para agregar al carrito
+    document.getElementById('agregar-carrito').addEventListener('click', function() {
+      // Obtener lista actual o crear una nueva
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push(producto.id);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert('Producto agregado al carrito');
+    });
+  } else {
+    document.getElementById('detalle-producto').innerHTML = '<p>Producto no encontrado.</p>';
+  }
+
+  </script>
+</body>
+</html>
