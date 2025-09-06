@@ -7,10 +7,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="src/styles/style.css" />
 </head>
-<body class="bg-light">
-  <!-- Header / Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-    <div class="container">
+<body>
+  <!-- Navbar oscuro de borde a borde -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 border-bottom border-secondary">
+    <div class="container-fluid">
       <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
         <img src="img/Logo Lvl Up.PNG" alt="Level-Up Gamer Logo" width="100" height="100" class="me-2" />
         Level-Up Gamer
@@ -33,165 +33,179 @@
       </div>
     </div>
   </nav>
-
-<!-- Hero Section -->
-<section class="py-5 bg-secondary bg-opacity-10">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-md-6">
-        <h1 class="display-5 fw-bold">TIENDA ONLINE</h1>
-        <p class="lead hero-text">Bienvenido a Level-Up Gamer, tu tienda líder en productos para gamers en Chile. Descubre los mejores juegos, accesorios y tecnología para potenciar tu experiencia.</p>
-        <a href="#productos" class="btn btn-dark btn-lg mt-3">Ver productos</a>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Columna izquierda: banners alineados con el hero -->
+      <div class="col-md-2 d-none d-md-flex flex-column align-items-center banners-laterales bg-gamer-dark">
+        <!-- Banner 1 -->
+        <div class="card mb-4 shadow border-dark bg-dark text-light" style="width: 100%;">
+          <img src="https://i0.wp.com/entre7maletas.com/wp-content/uploads/2021/01/Juegos-de-mesa-de-viaje.jpg?fit=1000%2C748&ssl=1" class="card-img-top" alt="Juegos de Mesa Modernos" style="height:120px; object-fit:cover;">
+          <div class="card-body text-center">
+            <h6 class="card-title fw-bold">Top 10 juegos de mesa modernos para novatos</h6>
+          </div>
+        </div>
+        <!-- Banner 2 -->
+        <div class="card mb-4 shadow border-dark bg-dark text-light" style="width: 100%;">
+          <img src="https://www.eylstore.cl/wp-content/uploads/2025/03/gabinete-airflow-storm-black-atx-4x-120mm-fan-auto-rgb-1x-usb-c-1x-usb-30-2x-usb20-gpu-400mm.webp" class="card-img-top" alt="Armar PC Gamer Barato" style="height:120px; object-fit:cover;">
+          <div class="card-body text-center">
+            <h6 class="card-title fw-bold">Te enseñamos a armar tu PC Gamer barato! $$$</h6>
+          </div>
+        </div>
       </div>
-      <div class="col-md-6">
-
-        <!-- Carrusel de categorías -->
-        <div class="bg-light border rounded" style="height: 250px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-          <div id="mainCarousel" class="carousel slide w-100 h-100" data-bs-ride="carousel">
-            <div class="carousel-inner h-100">
-              <div class="carousel-item active h-100">
-                <img src="https://i0.wp.com/www.magicsur.cl/blog/wp-content/uploads/2018/11/portada1.jpg?w=1000&ssl=1" class="d-block w-100 h-100" style="object-fit: cover;" alt="Juegos de Mesa">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Juegos de Mesa</h5>
-                </div>
+      <!-- Columna central: contenido principal oscuro -->
+      <div class="col-12 col-md-8 bg-gamer-dark">
+        <!-- Hero Section -->
+        <section class="py-5 bg-dark-blur text-light">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-6">
+                <h1 class="display-5 fw-bold">TIENDA ONLINE</h1>
+                <p class="lead hero-text">Bienvenido a Level-Up Gamer, tu tienda líder en productos para gamers en Chile. Descubre los mejores juegos, accesorios y tecnología para potenciar tu experiencia.</p>
+                <a href="#productos" class="btn btn-dark btn-lg mt-3">Ver productos</a>
               </div>
-              <div class="carousel-item h-100">
-                <img src="https://gamerstyle.com.mx/wp-content/uploads/2020/04/Consolas-de-videojuegos.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Consolas">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Consolas</h5>
-                </div>
-              </div>
-              <div class="carousel-item h-100">
-                <img src="https://i.pinimg.com/736x/27/0e/12/270e12e7c5ddbdc54c3345928ab2b9a9.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Computadores Gamer">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Computadores Gamer</h5>
-                </div>
-              </div>
-              <div class="carousel-item h-100">
-                <img src="https://images.secretlab.co/theme/common/home-featured-ml.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Sillas Gamer">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Sillas Gamer</h5>
-                </div>
-              </div>
-              <div class="carousel-item h-100">
-                <img src="https://http2.mlstatic.com/D_Q_NP_2X_829207-MLC72263743361_102023-AB-polerones-roblox-gamer-4-nins-adultos.webp" class="d-block w-100 h-100" style="object-fit: cover;" alt="Accesorios">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5 class="fw-bold text-light bg-dark bg-opacity-75 rounded px-2">Accesorios</h5>
+              <div class="col-md-6">
+                <!-- Carrusel de categorías -->
+                <div class="bg-light border rounded" style="height: 250px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                  <div id="mainCarousel" class="carousel slide w-100 h-100" data-bs-ride="carousel">
+                    <div class="carousel-inner h-100">
+                      <div class="carousel-item active h-100">
+                        <img src="https://i0.wp.com/www.magicsur.cl/blog/wp-content/uploads/2018/11/portada1.jpg?w=1000&ssl=1" class="d-block w-100 h-100" style="object-fit: cover;" alt="Juegos de Mesa">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 class="fw-bold">Juegos de Mesa</h5>
+                        </div>
+                      </div>
+                      <div class="carousel-item h-100">
+                        <img src="https://gamerstyle.com.mx/wp-content/uploads/2020/04/Consolas-de-videojuegos.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Consolas">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 class="fw-bold">Consolas</h5>
+                        </div>
+                      </div>
+                      <div class="carousel-item h-100">
+                        <img src="https://i.pinimg.com/736x/27/0e/12/270e12e7c5ddbdc54c3345928ab2b9a9.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Computadores Gamer">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 class="fw-bold">Computadores Gamer</h5>
+                        </div>
+                      </div>
+                      <div class="carousel-item h-100">
+                        <img src="https://images.secretlab.co/theme/common/home-featured-ml.jpg" class="d-block w-100 h-100" style="object-fit: cover;" alt="Sillas Gamer">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 class="fw-bold">Sillas Gamer</h5>
+                        </div>
+                      </div>
+                      <div class="carousel-item h-100">
+                        <img src="https://http2.mlstatic.com/D_Q_NP_2X_829207-MLC72263743361_102023-AB-polerones-roblox-gamer-4-nins-adultos.webp" class="d-block w-100 h-100" style="object-fit: cover;" alt="Accesorios">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5 class="fw-bold">Accesorios</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon"></span>
+                      <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                      <span class="carousel-control-next-icon"></span>
+                      <span class="visually-hidden">Siguiente</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- Flechas de navegación -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
           </div>
-        </div>
+        </section>
+        <!-- Catálogo de productos -->
+        <section class="py-5 bg-dark-blur text-light" id="productos">
+          <div class="container">
+            <h2 class="mb-4 fw-bold">Productos destacados del Mes</h2>
+            <div class="row g-4">
+              <!-- Producto 1 -->
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                  <div class="bg-light d-flex align-items-center justify-content-center">
+                    <img src="https://media.falabella.com/falabellaCL/123069773_01/w=1500,h=1500,fit=pad"
+                         alt="Catan"
+                         class="w-100 h-100" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Catan</h5>
+                    <p class="card-text">Un clásico juego de estrategia.</p>
+                    <p class="fw-bold mb-2">$29.990 CLP</p>
+                    <button class="btn btn-dark w-100">Agregar al carrito</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Producto 2 -->
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                  <div class="bg-light d-flex align-items-center justify-content-center">
+                    <img src="https://cl-dam-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/256x0/filters:quality(75)/paris/867533999/variant/images/90df5ff7-61de-4449-8661-2d1717dc77b7/867533999-0000-002.jpg"
+                         alt="Controlador Xbox Series X"
+                         class="w-100 h-100" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Controlador Xbox Series X</h5>
+                    <p class="card-text">Comodidad y precisión para gamers.</p>
+                    <p class="fw-bold mb-2">$59.990 CLP</p>
+                    <button class="btn btn-dark w-100">Agregar al carrito</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Producto 3 -->
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                  <div class="bg-light d-flex align-items-center justify-content-center">
+                    <img src="https://cl-cenco-pim-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/1920x0/prd-cl/product-medias/fdaaf40f-0832-48e6-bb68-11a285b0efb4/MK5VI9D93J/MK5VI9D93J-1/1702489938153-MK5VI9D93J-1-3.jpg"
+                         alt="Silla Gamer"
+                         class="w-100 h-100" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Silla Gamer Oficina Krone XL</h5>
+                    <p class="card-text">Reclinable + Masaje + Apoyapiés - Camel.</p>
+                    <p class="fw-bold mb-2">$149.990 CLP</p>
+                    <button class="btn btn-dark w-100">Agregar al carrito</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Producto 4 -->
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="card h-100">
+                  <div class="bg-light d-flex align-items-center justify-content-center">
+                    <img src="https://media.spdigital.cl/thumbnails/products/1753449762314-B1_9cdf6c26_thumbnail_512.png"
+                         alt="Computador Gamer"
+                         class="w-100 h-100" />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">PC Gamer ARGH29</h5>
+                    <p class="card-text">Ryzen 5 5600X, 32GB RGB, 1TB NVMe, RTX 5060 8GB, Wi-Fi, Full RGB</p>
+                    <p class="fw-bold mb-2">$1.242.130 CLP</p>
+                    <button class="btn btn-dark w-100">Agregar al carrito</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Footer -->
+        <footer class="footer-dark border-top py-4 mt-5 bg-dark text-light">
+          <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div>
+              <span class="fw-bold">Level-Up Gamer</span> &copy; 2025. Todos los derechos reservados.
+            </div>
+            <div>
+              <a href="#" class="me-2">Category 1</a>
+              <a href="#" class="me-2">Category 2</a>
+              <a href="#">Category 3</a>
+            </div>
+            <form class="d-flex align-items-center">
+              <input type="email" class="form-control form-control-sm me-2" placeholder="Enter Email" />
+              <button class="btn btn-dark btn-sm">Suscribirse</button>
+            </form>
+          </div>
+        </footer>
       </div>
+      <!-- Columna derecha vacía para centrar en pantallas grandes, también fondo oscuro -->
+      <div class="col-md-2 d-none d-md-block bg-gamer-dark"></div>
     </div>
   </div>
-</section>
-
-<!-- Catálogo de productos -->
-<section class="py-5" id="productos">
-  <div class="container">
-    <h2 class="mb-4 fw-bold">Productos destacados del Mes</h2>
-    <div class="row g-4">
-      <!-- Producto ejemplo -->
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card h-100">
-          <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px; overflow: hidden; border-radius: 8px;">
-            <img src="https://media.falabella.com/falabellaCL/123069773_01/w=1500,h=1500,fit=pad"
-                 alt="Catan"
-                 class="w-100 h-100"
-                 style="object-fit: cover; border-radius: 8px;" />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Catan</h5>
-            <p class="card-text">Un clásico juego de estrategia.</p>
-            <p class="fw-bold mb-2">$29.990 CLP</p>
-            <button class="btn btn-outline-dark w-100">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <!-- Repite para más productos -->
-      <div class="col-6 col-md-4 col-lg-3">
-        <div class="card h-100">
-          <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px; overflow: hidden; border-radius: 8px;">
-            <img src="https://cl-dam-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/256x0/filters:quality(75)/paris/867533999/variant/images/90df5ff7-61de-4449-8661-2d1717dc77b7/867533999-0000-002.jpg"
-                 alt="Controlador Xbox Series X"
-                 class="w-100 h-100"
-                 style="object-fit: cover; border-radius: 8px;" />
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Controlador Xbox Series X</h5>
-            <p class="card-text">Comodidad y precisión para gamers.</p>
-            <p class="fw-bold mb-2">$59.990 CLP</p>
-            <button class="btn btn-outline-dark w-100">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-      <!-- ...más productos -->
-       <!-- Producto 3 -->
-  <div class="col-6 col-md-4 col-lg-3">
-    <div class="card h-100">
-      <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px; overflow: hidden; border-radius: 8px;">
-        <img src="https://cl-cenco-pim-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/1920x0/prd-cl/product-medias/fdaaf40f-0832-48e6-bb68-11a285b0efb4/MK5VI9D93J/MK5VI9D93J-1/1702489938153-MK5VI9D93J-1-3.jpg"
-             alt="Silla Gamer"
-             class="w-100 h-100"
-             style="object-fit: cover; border-radius: 8px;" />
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">Silla Gamer Oficina Krone XL</h5>
-        <p class="card-text">Reclinable + Masaje + Apoyapiés - Camel.</p>
-        <p class="fw-bold mb-2">$149.990 CLP</p>
-        <button class="btn btn-outline-dark w-100">Agregar al carrito</button>
-      </div>
-    </div>
-  </div>
-  <!-- Producto 4 -->
-  <div class="col-6 col-md-4 col-lg-3">
-    <div class="card h-100">
-      <div class="bg-light d-flex align-items-center justify-content-center" style="height: 120px; overflow: hidden; border-radius: 8px;">
-        <img src="https://media.spdigital.cl/thumbnails/products/1753449762314-B1_9cdf6c26_thumbnail_512.png"
-             alt="Computador Gamer"
-             class="w-100 h-100"
-             style="object-fit: cover; border-radius: 8px;" />
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">PC Gamer ARGH29</h5>
-        <p class="card-text">Ryzen 5 5600X, 32GB RGB, 1TB NVMe, RTX 5060 8GB, Wi-Fi, Full RGB</p>
-        <p class="fw-bold mb-2">$1.242.130 CLP</p>
-        <button class="btn btn-outline-dark w-100">Agregar al carrito</button>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer-dark border-top py-4 mt-5">
-  <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-    <div>
-      <span class="fw-bold">Level-Up Gamer</span> &copy; 2025. Todos los derechos reservados.
-    </div>
-    <div>
-      <a href="#" class="me-2">Category 1</a>
-      <a href="#" class="me-2">Category 2</a>
-      <a href="#">Category 3</a>
-    </div>
-    <form class="d-flex align-items-center">
-      <input type="email" class="form-control form-control-sm me-2" placeholder="Enter Email" />
-      <button class="btn btn-dark btn-sm">Suscribirse</button>
-    </form>
-  </div>
-</footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
