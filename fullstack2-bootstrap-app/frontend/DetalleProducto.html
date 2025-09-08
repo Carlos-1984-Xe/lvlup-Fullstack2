@@ -53,7 +53,25 @@
       </div>
     </div>
   </nav>
-  <div id="detalle-producto" class="container mt-4"></div>
+  <div class="main-content">
+    <div id="detalle-producto" class="container mt-4"></div>
+  </div>
+  <footer class="footer-dark border-top py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div>
+        <span class="fw-bold">Level-Up Gamer</span> &copy; 2025. Todos los derechos reservados.
+      </div>
+      <div>
+        <a href="#" class="me-2">Category 1</a>
+        <a href="#" class="me-2">Category 2</a>
+        <a href="#">Category 3</a>
+      </div>
+      <form class="d-flex align-items-center">
+        <input type="email" class="form-control form-control-sm me-2" placeholder="Enter Email" />
+        <button class="btn btn-dark btn-sm">Suscribirse</button>
+      </form>
+    </div>
+  </footer>
   <script type="module">
   import { productos } from './src/Productos.js';
 
@@ -68,12 +86,38 @@
   if (producto) {
     // Formatea el precio como CLP (o el formato que prefieras)
     const precioFormateado = `$${producto.precio.toLocaleString('es-CL')}`;
+
+    // Si tu producto tiene una propiedad "categoria", úsala. Si no, pon una por defecto:
+    const categoria = producto.categoria || "Categoría";
+
+    // Breadcrumb HTML
+    const breadcrumb = `
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb bg-transparent p-0">
+          <li class="breadcrumb-item"><a href="Home.html" class="text-success text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item"><a href="#" class="text-success text-decoration-none">${categoria}</a></li>
+          <li class="breadcrumb-item active text-light" aria-current="page">${producto.nombre}</li>
+        </ol>
+      </nav>
+    `;
+
     document.getElementById('detalle-producto').innerHTML = `
-      <h1 class="text-center">${producto.nombre}</h1>
-      <img src="${producto.imagen}" alt="${producto.nombre}" class="detalle-img" />
-      <div class="descripcion-marco">${producto.descripcion}</div>
-      <p><strong>Precio:</strong> ${precioFormateado}</p>
-      <button id="agregar-carrito" class="btn btn-success mt-3">Agregar producto</button>
+      ${breadcrumb}
+      <div class="row align-items-center">
+        <div class="col-md-6 d-flex justify-content-start align-items-center mb-4 mb-md-0">
+          <img src="${producto.imagen}" alt="${producto.nombre}" class="detalle-img img-fluid rounded shadow" style="max-height:400px;object-fit:contain; margin-left:0;">
+        </div>
+        <div class="col-md-6">
+          <div class="caja-detalle">
+            <div class="d-flex align-items-center mb-3">
+              <h2 class="mb-0 flex-grow-1">${producto.nombre}</h2>
+              <span class="badge bg-success fs-4 ms-3">${precioFormateado}</span>
+            </div>
+            <div class="mb-4 text-secondary" style="font-size:1.1rem;">${producto.descripcion}</div>
+            <button id="agregar-carrito" class="btn btn-success btn-lg px-4">Agregar producto</button>
+          </div>
+        </div>
+      </div>
     `;
 
     // Evento para agregar al carrito
@@ -100,21 +144,5 @@
 </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="src/ActualizacionCarrito.js"></script>
-    <footer class="footer-dark border-top py-4 mt-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <div>
-        <span class="fw-bold">Level-Up Gamer</span> &copy; 2025. Todos los derechos reservados.
-      </div>
-      <div>
-        <a href="#" class="me-2">Category 1</a>
-        <a href="#" class="me-2">Category 2</a>
-        <a href="#">Category 3</a>
-      </div>
-      <form class="d-flex align-items-center">
-        <input type="email" class="form-control form-control-sm me-2" placeholder="Enter Email" />
-        <button class="btn btn-dark btn-sm">Suscribirse</button>
-      </form>
-    </div>
-  </footer>
 </body>
 </html>
