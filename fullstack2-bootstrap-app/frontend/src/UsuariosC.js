@@ -2,7 +2,8 @@
 export const usuarios = [
     {
         id: 1,
-        nombre: 'A B C D',
+        nombre: 'A B',
+        apellido: 'C D',
         email: 'abcd@duoc.cl',
         contraseña: '1234567890',
         Contacto: '987654321',
@@ -14,7 +15,8 @@ export const usuarios = [
     },
     {
         id: 2,
-        nombre: 'E F G H',
+        nombre: 'E F',
+        apellido: 'G H',
         email: 'efgh@profesor.duoc.cl',
         contraseña: '0987654321',
         Contacto: '876543210',
@@ -26,7 +28,8 @@ export const usuarios = [
     },
     {
         id: 3,
-        nombre: 'I J K L',
+        nombre: 'I J',
+        apellido: 'K L',
         email: 'ijkl@gmail.cl',
         contraseña: '1234567891',
         Contacto: '765432109',
