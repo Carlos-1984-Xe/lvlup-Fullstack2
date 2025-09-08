@@ -15,15 +15,23 @@ function renderCarrito() {
   lista.innerHTML = '';
   let total = 0;
 
+  const btnPagar = document.getElementById('proceder-compra');
+  const btnVaciar = document.getElementById('borrar-carrito');
+  const btnCupon = document.getElementById('aplicar-cupon');
+
   if (carrito.length === 0) {
     vacio.style.display = 'block';
     totalDiv.textContent = 'Total: $0';
+    btnPagar.disabled = true;
+    btnVaciar.disabled = true;
+    btnCupon.disabled = true;
     return;
   } else {
     vacio.style.display = 'none';
+    btnPagar.disabled = false;
+    btnVaciar.disabled = false;
+    btnCupon.disabled = false;
   }
-
-  console.log(carrito); // <-- Agrega esto para depurar
 
   carrito.forEach(item => {
     const producto = productos.find(p => p.id === item.id);
@@ -31,6 +39,9 @@ function renderCarrito() {
     const precioNumero = Number(producto.precio);
     const precioFormateado = precioNumero.toLocaleString('es-CL');
     total += precioNumero * item.cantidad;
+
+    // Desactivar el botón "+" si llegó al stock
+    const desactivarSumar = item.cantidad >= producto.stock ? 'disabled' : '';
 
     const li = document.createElement('li');
     li.className = 'carrito-item caja-clara list-group-item border-0';
@@ -42,7 +53,7 @@ function renderCarrito() {
         <div class="cantidad-control mt-2">
           <button class="btn btn-outline-dark btn-sm cantidad-btn" data-id="${item.id}" data-action="restar">-</button>
           <span class="mx-2">${item.cantidad}</span>
-          <button class="btn btn-outline-dark btn-sm cantidad-btn" data-id="${item.id}" data-action="sumar">+</button>
+          <button class="btn btn-outline-dark btn-sm cantidad-btn" data-id="${item.id}" data-action="sumar" ${desactivarSumar}>+</button>
         </div>
       </div>
     `;
@@ -59,9 +70,18 @@ lista.addEventListener('click', e => {
     const id = e.target.getAttribute('data-id');
     const action = e.target.getAttribute('data-action');
     const item = carrito.find(i => i.id === id);
-    if (item) {
-      if (action === 'sumar') item.cantidad++;
-      if (action === 'restar' && item.cantidad > 1) item.cantidad--;
+    const producto = productos.find(p => p.id === id);
+    if (item && producto) {
+      if (action === 'sumar') {
+        if (item.cantidad < producto.stock) {
+          item.cantidad++;
+        } else {
+          alert('No puedes agregar más, alcanzaste el stock disponible.');
+        }
+      }
+      if (action === 'restar' && item.cantidad > 1) {
+        item.cantidad--;
+      }
       renderCarrito();
     }
   }

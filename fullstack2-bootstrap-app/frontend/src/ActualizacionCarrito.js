@@ -1,6 +1,8 @@
 function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('carrito')) || [];
-    document.getElementById('cart-count').textContent = cart.length;
-    }
+  const cartCountElement = document.getElementById('cart-count');
+  if (cartCountElement) {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    cartCountElement.textContent = carrito.length;
+  }
+}
 updateCartCount();
-window.addEventListener('storage', updateCartCount);
