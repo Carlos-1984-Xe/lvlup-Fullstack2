@@ -54,46 +54,52 @@
     </div>
   </nav>
   <div id="detalle-producto" class="container mt-4"></div>
-  <script src="src/Productos.js"></script>
-  <script>
-    // Obtener el id de la URL
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
+  <script type="module">
+  import { productos } from './src/Productos.js';
 
-    // Buscar el producto en la lista
-    const producto = productos.find(p => p.id === id);
+  // Obtener el id de la URL
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
 
-    // Mostrar los datos
+  // Buscar el producto en la lista
+  const producto = productos.find(p => p.id === id);
+
+  // Mostrar los datos
   if (producto) {
+    // Formatea el precio como CLP (o el formato que prefieras)
+    const precioFormateado = `$${producto.precio.toLocaleString('es-CL')}`;
     document.getElementById('detalle-producto').innerHTML = `
       <h1 class="text-center">${producto.nombre}</h1>
       <img src="${producto.imagen}" alt="${producto.nombre}" class="detalle-img" />
       <div class="descripcion-marco">${producto.descripcion}</div>
-      <p><strong>Precio:</strong> ${producto.precio}</p>
+      <p><strong>Precio:</strong> ${precioFormateado}</p>
       <button id="agregar-carrito" class="btn btn-success mt-3">Agregar producto</button>
     `;
 
-      // Evento para agregar al carrito
-      document.getElementById('agregar-carrito').addEventListener('click', function() {
-        // Obtener lista actual o crear una nueva
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        carrito.push(producto.id);
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-        alert('Producto agregado al carrito');
+    // Evento para agregar al carrito
+    document.getElementById('agregar-carrito').addEventListener('click', function() {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      // Normaliza el carrito cargado
+      carrito = carrito.map(item => typeof item === 'string' ? { id: item, cantidad: 1 } : item);
+
+      const existente = carrito.find(item => item.id === producto.id);
+      if (existente) {
+        existente.cantidad++;
+      } else {
+        carrito.push({ id: producto.id, cantidad: 1 });
+      }
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert('Producto agregado al carrito');
       if (typeof updateCartCount === 'function') {
-      updateCartCount();
-    }
-  });
-    } else {
-      document.getElementById('detalle-producto').innerHTML = '<p>Producto no encontrado.</p>';
-    }
-
-    
-
-  </script>
+        updateCartCount();
+      }
+    });
+  } else {
+    document.getElementById('detalle-producto').innerHTML = '<p>Producto no encontrado.</p>';
+  }
+</script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="src/ActualizacionCarrito.js"></script>
-  <script src="src/InteraccionesProducto.js"></script>
     <footer class="footer-dark border-top py-4 mt-5">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
       <div>
