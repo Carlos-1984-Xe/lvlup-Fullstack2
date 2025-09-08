@@ -142,72 +142,7 @@
         <section class="py-5 bg-dark-blur text-light" id="productos">
           <div class="container">
             <h2 class="mb-4 fw-bold">Productos destacados del Mes</h2>
-            <div class="row g-4">
-              <!-- Producto 1 -->
-              <div class="col-6 col-md-4 col-lg-3">
-                <div class="card h-100">
-                  <div class="bg-light d-flex align-items-center justify-content-center">
-                    <img src="https://media.falabella.com/falabellaCL/123069773_01/w=1500,h=1500,fit=pad"
-                         alt="Catan"
-                         class="w-100 h-100" />
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Catan</h5>
-                    <p class="card-text">Un clásico juego de estrategia.</p>
-                    <p class="fw-bold mb-2">$29.990 CLP</p>
-                    <button class="btn btn-dark w-100">Agregar al carrito</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Producto 2 -->
-              <div class="col-6 col-md-4 col-lg-3">
-                <div class="card h-100">
-                  <div class="bg-light d-flex align-items-center justify-content-center">
-                    <img src="https://cl-dam-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/256x0/filters:quality(75)/paris/867533999/variant/images/90df5ff7-61de-4449-8661-2d1717dc77b7/867533999-0000-002.jpg"
-                         alt="Controlador Xbox Series X"
-                         class="w-100 h-100" />
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Controlador Xbox Series X</h5>
-                    <p class="card-text">Comodidad y precisión para gamers.</p>
-                    <p class="fw-bold mb-2">$59.990 CLP</p>
-                    <button class="btn btn-dark w-100">Agregar al carrito</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Producto 3 -->
-              <div class="col-6 col-md-4 col-lg-3">
-                <div class="card h-100">
-                  <div class="bg-light d-flex align-items-center justify-content-center">
-                    <img src="https://cl-cenco-pim-resizer.ecomm.cencosud.com/unsafe/adaptive-fit-in/1920x0/prd-cl/product-medias/fdaaf40f-0832-48e6-bb68-11a285b0efb4/MK5VI9D93J/MK5VI9D93J-1/1702489938153-MK5VI9D93J-1-3.jpg"
-                         alt="Silla Gamer"
-                         class="w-100 h-100" />
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">Silla Gamer Oficina Krone XL</h5>
-                    <p class="card-text">Reclinable + Masaje + Apoyapiés - Camel.</p>
-                    <p class="fw-bold mb-2">$149.990 CLP</p>
-                    <button class="btn btn-dark w-100">Agregar al carrito</button>
-                  </div>
-                </div>
-              </div>
-              <!-- Producto 4 -->
-              <div class="col-6 col-md-4 col-lg-3">
-                <div class="card h-100">
-                  <div class="bg-light d-flex align-items-center justify-content-center">
-                    <img src="https://media.spdigital.cl/thumbnails/products/1753449762314-B1_9cdf6c26_thumbnail_512.png"
-                         alt="Computador Gamer"
-                         class="w-100 h-100" />
-                  </div>
-                  <div class="card-body">
-                    <h5 class="card-title">PC Gamer ARGH29</h5>
-                    <p class="card-text">Ryzen 5 5600X, 32GB RGB, 1TB NVMe, RTX 5060 8GB, Wi-Fi, Full RGB</p>
-                    <p class="fw-bold mb-2">$1.242.130 CLP</p>
-                    <button class="btn btn-dark w-100">Agregar al carrito</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="row g-4" id="destacados"></div>
           </div>
         </section>
         <!-- Footer -->
@@ -238,3 +173,38 @@
 </body>
 
 <script src="src/ActualizacionCarrito.js"></script>
+<script type="module">
+import { productos } from './src/Productos.js';
+
+// Función para obtener 4 productos al azar
+function obtenerProductosAleatorios(arr, n) {
+  const copia = [...arr];
+  const resultado = [];
+  while (resultado.length < n && copia.length > 0) {
+    const idx = Math.floor(Math.random() * copia.length);
+    resultado.push(copia.splice(idx, 1)[0]);
+  }
+  return resultado;
+}
+
+const destacados = obtenerProductosAleatorios(productos, 4);
+
+const destacadosContainer = document.getElementById('destacados');
+destacados.forEach(producto => {
+  const precioFormateado = `$${producto.precio.toLocaleString('es-CL')} CLP`;
+  destacadosContainer.innerHTML += `
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card h-100">
+        <div class="bg-light d-flex align-items-center justify-content-center" style="height:180px;">
+          <img src="${producto.imagen}" alt="${producto.nombre}" class="w-100 h-100" style="object-fit:contain;max-height:180px;">
+        </div>
+        <div class="card-body d-flex flex-column justify-content-between">
+          <h5 class="card-title">${producto.nombre}</h5>
+          <p class="fw-bold mb-2">${precioFormateado}</p>
+          <a href="DetalleProducto.html?id=${producto.id}" class="btn btn-dark w-100 mt-auto">Ver detalle</a>
+        </div>
+      </div>
+    </div>
+  `;
+});
+</script>
