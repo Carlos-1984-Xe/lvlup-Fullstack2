@@ -406,3 +406,89 @@ input:-webkit-autofill:active {
   color: #212529 !important;
   caret-color: #212529 !important;
 }
+
+/* ...en src/styles/style.css... */
+#lista-carrito .carrito-item {
+  display: flex;
+  align-items: center;
+  background: #343a40;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+.carrito-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 16px;
+  background: #fff;
+}
+.carrito-item-info {
+  flex: 1;
+}
+.cantidad-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cantidad-btn {
+  background: #23272b;
+  color: #39FF14;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.cantidad-btn:active {
+  background: #39FF14;
+  color: #23272b;
+}
+
+/* Caja clara para productos y totales */
+.caja-clara {
+  background: #f8f9fa !important;
+  color: #23272b !important;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+}
+.nombre-producto {
+  color: #23272b !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.caja-precio {
+  background: #fff !important;
+  color: #23272b !important;
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
