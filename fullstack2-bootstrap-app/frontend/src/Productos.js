@@ -1,4 +1,4 @@
-const productos = [
+export const productos = [
     {
         id: 'JM1',
         nombre: 'Catan',

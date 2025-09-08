@@ -51,10 +51,10 @@
       <aside class="col-auto admin-menu-producto d-flex flex-column align-items-start py-4 px-3" style="min-width:200px;max-width:220px;">
         <ul class="nav flex-column w-100">
           <li class="nav-item">
-            <a class="nav-link menu-producto-link active" href="#">Nuevo Producto</a>
+            <a class="nav-link menu-producto-link" href="#">Nuevo Producto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-producto-link" href="#">Editar Producto</a>
+            <a class="nav-link menu-producto-link active" href="#">Editar Producto</a>
           </li>
           <li class="nav-item">
             <a class="nav-link menu-producto-link" href="#">Mostrar Producto</a>
@@ -68,8 +68,15 @@
         </header>
         <section class="admin-content d-flex justify-content-center align-items-center" style="min-height:60vh;">
           <div class="card shadow-sm p-4" style="max-width:600px;width:100%;background:#f8f9fa;">
-            <h5 class="form-title-admin">Registro de producto</h5>
+            <h5 class="form-title-admin">Editor de producto</h5>
             <form>
+                <div class="mb-3">
+                  <label for="idProducto" class="form-label">ID DEL PRODUCTO</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="idProducto" placeholder="Ingresa el ID para buscar">
+                        <button type="button" class="btn btn-outline-secondary" id="buscarProductoBtn">Buscar</button>
+                    </div>
+                </div>
               <div class="mb-3">
                 <label for="nombreProducto" class="form-label">NOMBRE DEL PRODUCTO</label>
                 <input type="text" class="form-control" id="nombreProducto" required>
@@ -105,7 +112,7 @@
                 <label for="imagen" class="form-label">IMAGEN DEL PRODUCTO (URL)</label>
                 <input type="url" class="form-control" id="imagen" required>
               </div>
-              <button type="submit" class="btn btn-dark w-100 mt-2">REGISTRAR PRODUCTO</button>
+              <button type="submit" class="btn btn-dark w-100 mt-2">Actualizar Producto</button>
             </form>
           </div>
         </section>
@@ -113,5 +120,6 @@
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="src/buscarid.js" type="module"></script>
 </body>
 </html>
