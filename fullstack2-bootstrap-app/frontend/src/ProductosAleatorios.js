@@ -1,19 +1,24 @@
 // Importar el array de productos
 import { productos } from './src/Productos.js';
 
-// Función para obtener 4 productos al azar
+// funcion para obtener N productos aleatorios de un array
 function obtenerProductosAleatorios(arr, n) {
+  //crea copia del array para no modificar
   const copia = [...arr];
   const resultado = [];
+  //repite hasta la cantidad solicitada osea N en este caso 4
   while (resultado.length < n && copia.length > 0) {
+    //elige un numero/indice aleagotorio desde 0 hasta la longitud del array
     const idx = Math.floor(Math.random() * copia.length);
+    //saca el producto del array copia y lo agrega al array resultado
     resultado.push(copia.splice(idx, 1)[0]);
   }
   return resultado;
 }
-
+//indicanmos la cantidad de productos aleatorios a mostrar
 const destacados = obtenerProductosAleatorios(productos, 4);
 
+//muestra en pantalla los productos destacados/sugeridos
 const destacadosContainer = document.getElementById('destacados');
 destacados.forEach(producto => {
   const precioFormateado = `$${producto.precio.toLocaleString('es-CL')} CLP`;
