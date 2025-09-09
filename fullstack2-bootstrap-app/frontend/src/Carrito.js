@@ -10,10 +10,10 @@ let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 if (carrito.length && typeof carrito[0] === 'string') {
   carrito = carrito.map(id => ({ id, cantidad: 1 }));
 }
-
+//funcion para mostrar lo basico del carrito tambien se bloquean botones cuando este vacia
 function renderCarrito() {
   lista.innerHTML = '';
-  let total = 0;
+  let total = 0;  
 
   const btnPagar = document.getElementById('proceder-compra');
   const btnVaciar = document.getElementById('borrar-carrito');
@@ -33,16 +33,16 @@ function renderCarrito() {
     btnCupon.disabled = false;
   }
 
+  //se recorre el carrito mostrando los productos agregados al localstorage
   carrito.forEach(item => {
     const producto = productos.find(p => p.id === item.id);
     if (!producto) return;
     const precioNumero = Number(producto.precio);
     const precioFormateado = precioNumero.toLocaleString('es-CL');
     total += precioNumero * item.cantidad;
-
-    // Desactivar el botón "+" si llegó al stock
+    //2da verificacion, creacion posterior a la 1era
     const desactivarSumar = item.cantidad >= producto.stock ? 'disabled' : '';
-
+    //se crea una lista li con los productos
     const li = document.createElement('li');
     li.className = 'carrito-item caja-clara list-group-item border-0';
     li.innerHTML = `
@@ -60,11 +60,11 @@ function renderCarrito() {
     lista.appendChild(li);
   });
 
-  // Formatea el total con puntos
   totalDiv.textContent = `Total: $${total.toLocaleString('es-CL')}`;
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
+// Aqui tenemos el boton para sumar cantidad y restarla desde el carrito
 lista.addEventListener('click', e => {
   if (e.target.classList.contains('cantidad-btn')) {
     const id = e.target.getAttribute('data-id');
@@ -73,6 +73,7 @@ lista.addEventListener('click', e => {
     const producto = productos.find(p => p.id === id);
     if (item && producto) {
       if (action === 'sumar') {
+        //1era verificacion para no pasarse del stcok
         if (item.cantidad < producto.stock) {
           item.cantidad++;
         } else {
@@ -87,18 +88,21 @@ lista.addEventListener('click', e => {
   }
 });
 
+//limpieza del carrito
 document.getElementById('borrar-carrito').addEventListener('click', () => {
   carrito = [];
-  localStorage.removeItem('carrito'); // <-- Limpia el almacenamiento local
+  localStorage.removeItem('carrito');
   renderCarrito();
 });
 
+//aqui se envia un mensaje de compra y se limpia el carrito
 document.getElementById('proceder-compra').addEventListener('click', () => {
   alert('¡Gracias por tu compra!');
   carrito = [];
   renderCarrito();
 });
 
+// aqui se hace el descuento siendo la palabra DESCUENTO10
 document.getElementById('aplicar-cupon').addEventListener('click', () => {
   const cupon = document.getElementById('cupon').value.trim();
   if (cupon === 'DESCUENTO10') {
@@ -113,4 +117,5 @@ document.getElementById('aplicar-cupon').addEventListener('click', () => {
   }
 });
 
+// se muestra el carrito al cargar la pagina
 renderCarrito();

@@ -1,15 +1,17 @@
+// js para mostrar los productos en version lista en el html de productos, asi evitar creacion de muchos html
 import { productos } from './Productos.js';
 
-// Obtén la categoría de la URL
+// obtener categoria desde la URL
 const params = new URLSearchParams(window.location.search);
 const categoria = params.get('categoria') || '';
 document.getElementById('titulo-categoria').textContent = categoria;
 
-// Filtra los productos por categoría
+//filtracion de productos por su categoria
 const productosFiltrados = productos.filter(p => p.categoria === categoria);
 
-// Renderiza los productos igual que en JuegosMesa.html
+//muestra de los productos
 const contenedor = document.getElementById('contenedor-productos');
+//uso de map para recorrer el array y crear las cajas de productos
 contenedor.innerHTML = productosFiltrados.map(producto => `
   <div class="col-12 col-sm-6 col-md-4 col-lg-3">
     <div class="card h-100">

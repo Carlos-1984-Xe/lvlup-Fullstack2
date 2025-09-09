@@ -3,40 +3,43 @@ export const usuarios = [
     {
         id: 1,
         nombre: 'A B',
-        apellido: 'C D',
-        email: 'abcd@duoc.cl',
+        apellidos: 'C D',
+        correo: 'abcd@duoc.cl',
         contraseña: '1234567890',
         Contacto: '987654321',
-        fechaNacimiento: '1990-01-01',
+        fechaNacimiento: '01-01-1999',
         direccion: 'Calle Falsa 123',
-        run: '123456789',
-        Region: 'Metropolitana',
-        Comuna: 'Santiago'
+        RUN: '123456789',
+        Región: 'MR',
+        Comuna: 'Santiago',
+        Rol: 'Cliente'
     },
     {
         id: 2,
         nombre: 'E F',
-        apellido: 'G H',
-        email: 'efgh@profesor.duoc.cl',
+        apellidos: 'G H',
+        correo: 'efgh@profesor.duoc.cl',
         contraseña: '0987654321',
         Contacto: '876543210',
-        fechaNacimiento: '1985-05-15',
+        fechaNacimiento: '15-05-1985',
         direccion: 'Avenida Siempre Viva 742',
-        run: '987654321',
-        Region: 'Valparaíso',
-        Comuna: 'Viña del Mar'
+        RUN: '987654321',
+        Región: 'V',
+        Comuna: 'Viña del Mar',
+        Rol: 'Cliente'
     },
     {
         id: 3,
         nombre: 'I J',
-        apellido: 'K L',
-        email: 'ijkl@gmail.cl',
+        apellidos: 'K L',
+        correo: 'ijkl@gmail.cl',
         contraseña: '1234567891',
         Contacto: '765432109',
-        fechaNacimiento: '1995-12-30',
+        fechaNacimiento: '30-12-1995',
         direccion: 'Pasaje Los Pajaritos 456',
-        run: '112233445',
-        Region: 'Metropolitana',
-        Comuna: 'Santiago'
+        RUN: '112233445',
+        Región: 'MR',
+        Comuna: 'Santiago',
+        Rol: 'Cliente'
     }
 ];

@@ -1,3 +1,4 @@
+//esto actualiza el numero del carrito en el navbar
 function updateCartCount() {
   const cartCountElement = document.getElementById('cart-count');
   if (cartCountElement) {
