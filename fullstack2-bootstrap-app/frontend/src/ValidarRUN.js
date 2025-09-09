@@ -1,2 +1,2 @@
-// Validación de RUN chileno
+// Validación de RUN
 //en proceso, no terminado
