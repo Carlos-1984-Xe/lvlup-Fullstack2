@@ -1,9 +1,11 @@
 import { productos } from './Productos.js';
 
+//aseguramos de que el html este cargado
 const lista = document.getElementById('lista-carrito');
 const vacio = document.getElementById('carrito-vacio');
 const totalDiv = document.getElementById('carrito-total');
 
+// Obtener carrito desde localStorage o inicializar vacio
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 // Si tu carrito guarda solo IDs, conviértelo a [{id, cantidad}]
@@ -15,10 +17,12 @@ function renderCarrito() {
   lista.innerHTML = '';
   let total = 0;  
 
+  //botones del carrito
   const btnPagar = document.getElementById('proceder-compra');
   const btnVaciar = document.getElementById('borrar-carrito');
   const btnCupon = document.getElementById('aplicar-cupon');
 
+  //si el carrito esta vacio se muestra mensaje y se desactivan botones
   if (carrito.length === 0) {
     vacio.style.display = 'block';
     totalDiv.textContent = 'Total: $0';
@@ -59,7 +63,7 @@ function renderCarrito() {
     `;
     lista.appendChild(li);
   });
-
+// se muestra el total y se guarda en el localstorage
   totalDiv.textContent = `Total: $${total.toLocaleString('es-CL')}`;
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
