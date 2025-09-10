@@ -19,6 +19,7 @@ function renderCarrito() {
   const btnVaciar = document.getElementById('borrar-carrito');
   const btnCupon = document.getElementById('aplicar-cupon');
 
+  //si el carrito esta vacio se muestra mensaje y se desactivan botones
   if (carrito.length === 0) {
     vacio.style.display = 'block';
     totalDiv.textContent = 'Total: $0';
@@ -59,7 +60,7 @@ function renderCarrito() {
     `;
     lista.appendChild(li);
   });
-
+// se muestra el total y se guarda en el localstorage
   totalDiv.textContent = `Total: $${total.toLocaleString('es-CL')}`;
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
