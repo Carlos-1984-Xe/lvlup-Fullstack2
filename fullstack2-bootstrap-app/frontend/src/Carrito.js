@@ -1,9 +1,11 @@
 import { productos } from './Productos.js';
 
+//aseguramos de que el html este cargado
 const lista = document.getElementById('lista-carrito');
 const vacio = document.getElementById('carrito-vacio');
 const totalDiv = document.getElementById('carrito-total');
 
+// Obtener carrito desde localStorage o inicializar vacio
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 // Si tu carrito guarda solo IDs, conviértelo a [{id, cantidad}]
@@ -15,6 +17,7 @@ function renderCarrito() {
   lista.innerHTML = '';
   let total = 0;  
 
+  //botones del carrito
   const btnPagar = document.getElementById('proceder-compra');
   const btnVaciar = document.getElementById('borrar-carrito');
   const btnCupon = document.getElementById('aplicar-cupon');
