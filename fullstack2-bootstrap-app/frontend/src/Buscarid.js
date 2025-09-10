@@ -21,51 +21,30 @@ document.addEventListener('DOMContentLoaded', () => {
             nombreProductoInput.value = productoEncontrado.nombre;
             descripcionInput.value = productoEncontrado.descripcion;
             //formateo del precio chileanPesos xd
-            const precioNumero = parseFloat(productoEncontrado.precio.replace(/[^0-9]/g,""));
+            const precioOriginal = productoEncontrado.precio;
+            const precioNumero = parseFloat(String(precioOriginal).replace(/[^0-9]/g, ""));
             const precioFormateado = new Intl.NumberFormat("es-CL", {
                 style: "currency",
                 currency: "CLP",
                 minimumFractionDigits: 0
             }).format(precioNumero);
-
+            // Mostrar precios en consola para depuración
+            console.log('Precio original:', precioOriginal);
+            console.log('Precio formateado:', precioFormateado);
             precioInput.value = precioFormateado;
+
             stockInput.value = productoEncontrado.stock;
             imagenInput.value = productoEncontrado.imagen;
 
             //Aqui se ve la categoria segun el id
-            const categoriaId = idBuscado.substring(0, 2);
-            let categoriaNombre = '';
+            const categoriaId = productoEncontrado.id.substring(0, 2);
+            const opcion = categoriaSelect.querySelector(`option[value="${categoriaId}"]`);
+            console.log('categoriaId:', categoriaId);
+            console.log('Opciones disponibles:', Array.from(categoriaSelect.options).map(opt => opt.value));
+            categoriaSelect.value = categoriaId;
+            
+            
 
-            switch (categoriaId) {
-                case 'JM':
-                    categoriaNombre = 'Juegos de Mesa';
-                    break;
-                case 'MS':
-                    categoriaNombre = 'Mouse';
-                    break;
-                case 'MP':
-                    categoriaNombre = 'Mousepads';
-                    break;
-                case 'PC':
-                    categoriaNombre = 'Computadores Gamer';
-                    break;
-                case 'RP':
-                    categoriaNombre = 'Ropa';
-                    break;
-                case 'SG':
-                    categoriaNombre = 'Sillas Gamer';
-                    break;
-                case 'CS':
-                    categoriaNombre = 'Consolas';
-                    break;
-                case 'AC':
-                    categoriaNombre = 'Accesorios';
-                    break;
-                default:
-                    categoriaNombre = 'Otra';
-            }
-
-            categoriaSelect.value = categoriaNombre;
         } else {
             alert('Producto no encontrado. Por favor, verifica el ID.');
             nombreProductoInput.value = '';
