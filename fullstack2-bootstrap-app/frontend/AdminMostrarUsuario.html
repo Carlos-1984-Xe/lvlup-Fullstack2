@@ -11,7 +11,8 @@
 <body>
   <div class="container-fluid">
     <div class="row">
-      <nav class="col-auto sidebar-admin d-flex flex-column position-relative px-3" style="min-width:220px;max-width:240px;">
+      <!-- NAV -->
+      <nav class="col-auto sidebar-admin d-flex flex-column position-relative px-3" style="min-width:220px;max-width:240px;" aria-label="Sidebar de administración">
         <div class="text-center mb-4">
           <img src="img/Logo Lvl Up.PNG" alt="Admin Logo" class="admin-logo rounded-circle bg-white" />
           <div class="fw-bold mt-2 company-title">Company</div>
@@ -46,7 +47,8 @@
           </ul>
         </div>
       </nav>
-      <aside class="col-auto admin-menu-producto d-flex flex-column align-items-start py-4 px-3" style="min-width:200px;max-width:220px;">
+      <!-- ASIDE -->
+      <aside class="col-auto admin-menu-producto d-flex flex-column align-items-start py-4 px-3" style="min-width:200px;max-width:220px;" aria-label="Menú de usuario">
         <ul class="nav flex-column w-100">
           <li class="nav-item">
             <a class="nav-link menu-producto-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/AdminNuevoUsuario.html">Nuevo Usuario</a>
@@ -59,16 +61,20 @@
           </li>
         </ul>
       </aside>
+      <!-- MAIN -->
       <main class="col px-0">
+        <!-- HEADER: encabezado de la sección -->
         <header class="admin-header">
           <h3 class="fw-bold mb-4 text-dark">Mostrar Usuarios</h3>
         </header>
+        <!-- SECTION -->
         <section class="admin-content">
-          <div class="card mt-2" style="min-height:350px;background:#f8f9fa;">
+          <!-- ARTICLE: listado de usuarios -->
+          <article class="card mt-2" style="min-height:350px;background:#f8f9fa;">
             <div class="card-body" id="listado-usuarios">
               <p class="text-muted">Aquí aparecerán los usuarios registrados en la tienda.</p>
             </div>
-          </div>
+          </article>
         </section>
       </main>
     </div>

@@ -10,60 +10,73 @@
   
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 border-bottom border-secondary">
-    <div class="container-fluid">
-      <a class="navbar-brand fw-bold d-flex align-items-center" href="Home.html">
-        <img src="img/Logo Lvl Up.PNG" alt="Level-Up Gamer Logo" width="100" height="100" class="me-2" />
-        Level-Up Gamer
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-3">
-          <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Productos
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 border-bottom border-secondary">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="Home.html">
+          <img src="img/Logo Lvl Up.PNG" alt="Level-Up Gamer Logo" width="100" height="100" class="me-2" />
+          Level-Up Gamer
         </a>
-        <ul class="dropdown-menu bg-dark text-light" aria-labelledby="productosDropdown">
-          <li><a class="dropdown-item text-light" href="Productos.html?categoria=Juegos de Mesa">Juegos de Mesa</a></li>
-          <li><a class="dropdown-item text-light" href="Productos.html?categoria=Consola">Consola</a></li>
-          <li><a class="dropdown-item text-light" href="Productos.html?categoria=Computador Gamer">Computadores Gamer</a></li>
-          <li><a class="dropdown-item text-light" href="Productos.html?categoria=Silla Gamer">Silla Gamer</a></li>
-          <li><a class="dropdown-item text-light" href="Productos.html?categoria=Accesorios">Accesorios</a></li>
-          <li><a class="dropdown-item text-light" href="Productos.html?categoria=Ropa">Ropa</a></li>
-          <li><a class="dropdown-item text-light" href="Productos.html?categoria=Mouse">Mouse</a></li>
-          <li><a class="dropdown-item text-light" href="Productos.html?categoria=Mousepad">Mousepad</a></li>
-        </ul>
-      </li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-3">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="productosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Productos
+              </a>
+              <ul class="dropdown-menu bg-dark text-light" aria-labelledby="productosDropdown">
+                <li><a class="dropdown-item text-light" href="Productos.html?categoria=Juegos de Mesa">Juegos de Mesa</a></li>
+                <li><a class="dropdown-item text-light" href="Productos.html?categoria=Consola">Consola</a></li>
+                <li><a class="dropdown-item text-light" href="Productos.html?categoria=Computador Gamer">Computadores Gamer</a></li>
+                <li><a class="dropdown-item text-light" href="Productos.html?categoria=Silla Gamer">Silla Gamer</a></li>
+                <li><a class="dropdown-item text-light" href="Productos.html?categoria=Accesorios">Accesorios</a></li>
+                <li><a class="dropdown-item text-light" href="Productos.html?categoria=Ropa">Ropa</a></li>
+                <li><a class="dropdown-item text-light" href="Productos.html?categoria=Mouse">Mouse</a></li>
+                <li><a class="dropdown-item text-light" href="Productos.html?categoria=Mousepad">Mousepad</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" href="Home.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="Nosotros.html">Nosotros</a></li>
             <li class="nav-item"><a class="nav-link" href="Blog1.html">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="Contacto.html">Contacto</a></li>
-</ul>
-        </ul>
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/Carrito.html">
-              <i class="bi bi-cart"></i> Carrito (<span id="cart-count">0</span>)
-            </a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/Login.html">Iniciar sesión</a></li>
-          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/Registro.html">Registrar usuario</a></li>
-        </ul>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/Carrito.html">
+                <i class="bi bi-cart"></i> Carrito (<span id="cart-count">0</span>)
+              </a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/Login.html">Iniciar sesión</a></li>
+            <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/Registro.html">Registrar usuario</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <div class="main-content">
-    <div id="detalle-producto" class="container mt-4"></div>
-  </div>
-  <section class="py-5 bg-dark-blur text-light" id="productos">
-          <div class="container">
-            <h2 class="mb-4 fw-bold">Productos Recomendados</h2>
-            <div class="row g-4" id="destacados"></div>
-          </div>
-        </section>
+    </nav>
+  </header>
+  <!-- MAIN -->
+  <main>
+    <!-- SECTION -->
+    <section class="main-content">
+      <!-- ARTICLE -->
+      <article>
+        <div id="detalle-producto" class="container mt-4"></div>
+      </article>
+    </section>
+    <!-- SECTION -->
+    <section class="py-5 bg-dark-blur text-light" id="productos">
+      <div class="container">
+        <h2 class="mb-4 fw-bold">Productos Recomendados</h2>
+        <!-- ARTICLE -->
+        <article>
+          <div class="row g-4" id="destacados"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <!-- FOOTER -->
   <footer class="footer-dark border-top py-4 mt-5">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
       <div>
