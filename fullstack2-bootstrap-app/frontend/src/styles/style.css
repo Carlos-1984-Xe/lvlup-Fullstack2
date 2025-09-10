@@ -1,5 +1,15 @@
-/* Fondo principal negro */
+/* Fondo principal negro y layout flex para sticky footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   background-color: #000000 !important;
   color: #e0e0e0 !important;
 }
@@ -223,11 +233,7 @@ input[type="email"]:focus {
   min-height: 300px;
 }
 
-/* Fondo general y colores sobrios */
-body {
-  background: #f4f6fa;
-  color: #222;
-}
+/* Eliminar fondo general duplicado */
 
 /* Sidebar */
 .sidebar-admin {
@@ -475,21 +481,27 @@ input:-webkit-autofill:active {
 
 html, body {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
-body {
-  min-height: 100vh;
+main {
+  flex: 1 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.main-content {
-  flex: 1 0 auto;
+/* Asegura que el contenido principal ocupe el alto disponible */
+.container-fluid, .row {
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 footer {
+  width: 100%;
+  background: #23272b;
+  color: #fff;
+  border-top: 2px solid #39FF14;
+  box-shadow: 0 0 24px #1E90FF22;
   flex-shrink: 0;
 }
 
@@ -501,24 +513,8 @@ footer {
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.main-content {
-  flex: 1 0 auto;
-}
-footer {
-  flex-shrink: 0;
-  background: #23272b;
-  color: #fff;
-}
+/* Eliminado duplicado html, body */
+/* Eliminado duplicados y reglas innecesarias */
 .caja-detalle {
   background: #23272b;         /* Gris oscuro */
   color: #f8f9fa;              /* Letras claras */
