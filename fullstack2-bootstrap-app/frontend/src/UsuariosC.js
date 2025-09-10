@@ -6,12 +6,12 @@ export const usuarios = [
         apellidos: 'C D',
         correo: 'abcd@duoc.cl',
         contraseña: '1234567890',
-        Contacto: '987654321',
+        telefono: '987654321',
         fechaNacimiento: '01-01-1999',
         direccion: 'Calle Falsa 123',
-        RUN: '123456789',
-        Región: 'MR',
-        Comuna: 'Santiago',
+        rut: '123456789',
+        region: 'MR',
+        comuna: 'Santiago',
         Rol: 'Cliente'
     },
     {
@@ -20,12 +20,12 @@ export const usuarios = [
         apellidos: 'G H',
         correo: 'efgh@profesor.duoc.cl',
         contraseña: '0987654321',
-        Contacto: '876543210',
+        telefono: '876543210',
         fechaNacimiento: '15-05-1985',
         direccion: 'Avenida Siempre Viva 742',
-        RUN: '987654321',
-        Región: 'V',
-        Comuna: 'Viña del Mar',
+        rut: '987654321',
+        region: 'V',
+        comuna: 'Viña del Mar',
         Rol: 'Cliente'
     },
     {
@@ -34,12 +34,12 @@ export const usuarios = [
         apellidos: 'K L',
         correo: 'ijkl@gmail.cl',
         contraseña: '1234567891',
-        Contacto: '765432109',
+        telefono: '765432109',
         fechaNacimiento: '30-12-1995',
         direccion: 'Pasaje Los Pajaritos 456',
-        RUN: '112233445',
-        Región: 'MR',
-        Comuna: 'Santiago',
+        rut: '112233445',
+        region: 'MR',
+        comuna: 'Santiago',
         Rol: 'Cliente'
     }
 ];
