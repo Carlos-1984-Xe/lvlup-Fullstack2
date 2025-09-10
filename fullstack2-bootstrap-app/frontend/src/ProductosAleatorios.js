@@ -1,5 +1,5 @@
 // Importar el array de productos
-import { productos } from './src/Productos.js';
+import { productos } from './Productos.js';
 
 // funcion para obtener N productos aleatorios de un array
 function obtenerProductosAleatorios(arr, n) {
