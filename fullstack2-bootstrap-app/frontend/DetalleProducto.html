@@ -171,47 +171,6 @@
 
   <script src="src/ActualizacionCarrito.js"></script>
 
-  <script type="module">
-    import { productos } from './src/Productos.js';
-
-// misma funcion que en ProductosAleatorios.js, pero aqui no se importa, no entiendo que pasa xd asi que lo coloque directamente
-function obtenerProductosAleatorios(arr, n) {
-  const copia = [...arr];
-  const resultado = [];
-  while (resultado.length < n && copia.length > 0) {
-    const idx = Math.floor(Math.random() * copia.length);
-    resultado.push(copia.splice(idx, 1)[0]);
-  }
-  return resultado;
-}
-const destacados = obtenerProductosAleatorios(productos, 4);
-
-const destacadosContainer = document.getElementById('destacados');
-destacados.forEach(producto => {
-  const precioFormateado = `$${producto.precio.toLocaleString('es-CL')} CLP`;
-  destacadosContainer.innerHTML += `
-    <div class="col-6 col-md-4 col-lg-3">
-      <div class="card h-100 bg-dark text-light">
-        <div class="d-flex align-items-center justify-content-center" style="background:#23272b; height:180px;">
-          <img src="${producto.imagen}" alt="${producto.nombre}" class="w-100 h-100" style="object-fit:contain;max-height:180px;">
-        </div>
-        <div class="card-body">
-          <h5 class="card-title text-light">${producto.nombre}</h5>
-          <p class="fw-bold mb-2 text-light">${precioFormateado}</p>
-          <a href="DetalleProducto.html?id=${producto.id}" class="btn btn-success w-100">Ver detalle</a>
-        </div>
-      </div>
-    </div>
-  `;
-});
-  </script>
-
-
-
-
-
-
-
-
+<script type="module" src="src/ProductosAleatorios.js"></script>
 </body>
 </html>

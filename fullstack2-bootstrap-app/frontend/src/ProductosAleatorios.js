@@ -25,10 +25,10 @@ destacados.forEach(producto => {
   destacadosContainer.innerHTML += `
     <div class="col-6 col-md-4 col-lg-3">
       <div class="card h-100">
-        <div class="bg-light d-flex align-items-center justify-content-center">
+        <div class="bg-dark-img d-flex align-items-center justify-content-center">
           <img src="${producto.imagen}" alt="${producto.nombre}" class="w-100 h-100" style="object-fit:contain;max-height:180px;">
         </div>
-        <div class="card-body">
+        <div class="card-body" style="background-color:#1a1a1a;">
           <h5 class="card-title">${producto.nombre}</h5>
           <p class="card-text">${producto.descripcion.slice(0, 50)}...</p>
           <p class="fw-bold mb-2">${precioFormateado}</p>
