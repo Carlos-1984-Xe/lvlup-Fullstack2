@@ -39,9 +39,12 @@
   }
 
   document.addEventListener('DOMContentLoaded', ()=>{
-    // Lugar donde se inyecta header/footer
-    loadFragment('#include-header', resolve('header.html'));
-    loadFragment('#include-footer', resolve('footer.html'));
+  // Lugar donde se inyecta header/footer y fragmentos admin
+  loadFragment('#include-header', resolve('header.html'));
+  loadFragment('#include-footer', resolve('footer.html'));
+  // Admin specific includes (if present)
+  loadFragment('#include-admin-sidebar', resolve('admin-sidebar.html'));
+  loadFragment('#include-admin-footer', resolve('admin-footer.html'));
 
     // Asegurar bootstrap bundle si no existe (para collapse, dropdowns, carousel)
     ensureScript('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js');
