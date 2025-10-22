@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Level-Up Gamer | Tienda Online</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- CSS/Bootstrap se inyectan desde includes/load-includes.js -->
+</head>
+<body>
+  <div id="include-header"></div>
+  <!-- MAIN -->
+  <main>
+    <!-- SECTION -->
+    <section class="main-content">
+      <!-- ARTICLE -->
+      <article>
+        <div id="detalle-producto" class="container mt-4"></div>
+      </article>
+    </section>
+    <!-- SECTION -->
+    <section class="py-5 bg-dark-blur text-light" id="productos">
+      <div class="container">
+        <h2 class="mb-4 fw-bold">Productos Recomendados</h2>
+        <!-- ARTICLE -->
+        <article>
+          <div class="row g-4" id="destacados"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+  <div id="include-footer"></div>
+
+  <script type="module" src="src/listadoDetalle.js"></script>
+  <script src="src/ActualizacionCarrito.js"></script>
+  <script type="module" src="src/ProductosAleatorios.js"></script>
+  <script src="../includes/load-includes.js"></script>
+</body>
+</html>
