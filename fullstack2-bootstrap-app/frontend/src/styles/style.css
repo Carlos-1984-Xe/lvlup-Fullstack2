@@ -330,6 +330,22 @@ input[type="email"]:focus {
   color: #39FF14;
 }
 
+/* Make the page content stretch so footer stays at the bottom when content is short.
+   The placeholder #include-admin-footer is a direct child of <body> so give it auto margin
+   to push the footer to the bottom in the document flex layout. */
+body > .container-fluid {
+  flex: 1 0 auto;
+}
+
+#include-admin-footer {
+  margin-top: auto;
+}
+
+/* Fallback helper class — if the footer fragment itself is used as the flex child. */
+footer.sticky-footer {
+  margin-top: auto !important;
+}
+
 .sidebar-admin .sidebar-footer {
   position: absolute;
   bottom: 1.5rem;
