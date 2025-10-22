@@ -9,21 +9,23 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
 </head>
 <body>
+  <!-- BODY -->
   <div class="container-fluid">
     <div class="row">
+      <!-- SIDEBAR -->
       <nav class="col-auto sidebar-admin d-flex flex-column position-relative px-3" style="min-width:220px;max-width:240px;">
         <div class="text-center mb-4">
-          <a href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/Home.html">
+          <a href="../Cliente/Home.html">
             <img src="img/Logo Lvl Up.PNG" alt="Admin Logo" class="admin-logo rounded-circle bg-white" />
           </a>
           <div class="fw-bold mt-2 company-title">Company</div>
         </div>
         <ul class="nav flex-column mb-4">
           <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/AdminHome.html"><i class="bi bi-grid-1x2 me-2"></i> Dashboard</a>
+            <a class="nav-link" href="AdminHome.html"><i class="bi bi-grid-1x2 me-2"></i> Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/AdminProducto.html"><i class="bi bi-box-seam me-2"></i> Inventario</a>
+            <a class="nav-link active" href="AdminProducto.html"><i class="bi bi-box-seam me-2"></i> Inventario</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-calendar-check me-2"></i> Pedidos</a>
@@ -32,7 +34,7 @@
             <a class="nav-link" href="#"><i class="bi bi-file-earmark-bar-graph me-2"></i> Reports</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/AdminUsuario.html"><i class="bi bi-person-badge me-2"></i> Usuarios</a>
+            <a class="nav-link" href="AdminUsuario.html"><i class="bi bi-person-badge me-2"></i> Usuarios</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-people me-2"></i> Customers</a>
@@ -48,27 +50,39 @@
           </ul>
         </div>
       </nav>
+      <!-- MENÚ SECUNDARIO -->
       <aside class="col-auto admin-menu-producto d-flex flex-column align-items-start py-4 px-3" style="min-width:200px;max-width:220px;">
         <ul class="nav flex-column w-100">
           <li class="nav-item">
-            <a class="nav-link menu-producto-link active" href="#">Nuevo Producto</a>
+            <a class="nav-link menu-producto-link" href="AdminNuevoProducto.html">Nuevo Producto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-producto-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/AdminEditar.html">Editar Producto</a>
+            <a class="nav-link menu-producto-link active" href="AdminEditarProducto.html">Editar Producto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-producto-link" href="http://127.0.0.1:3000/fullstack2-bootstrap-app/frontend/AdminMostrarProducto.html">Mostrar Producto</a>
+            <a class="nav-link menu-producto-link" href="AdminMostrarProducto.html">Mostrar Producto</a>
           </li>
         </ul>
       </aside>
+      <!-- MAIN -->
       <main class="col px-0">
+        <!-- HEADER -->
         <header class="admin-header">
           <h3 class="fw-bold mb-4 text-dark">Nuevo Producto</h3>
         </header>
+        <!-- SECTION -->
         <section class="admin-content d-flex justify-content-center align-items-center" style="min-height:60vh;">
-          <div class="card shadow-sm p-4" style="max-width:600px;width:100%;background:#f8f9fa;">
-            <h5 class="form-title-admin">Registro de producto</h5>
+          <!-- ARTICLE -->
+          <article class="card shadow-sm p-4" style="max-width:600px;width:100%;background:#f8f9fa;">
+            <h5 class="form-title-admin">Editor de producto</h5>
             <form>
+                <div class="mb-3">
+                  <label for="idProducto" class="form-label">ID DEL PRODUCTO</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="idProducto" placeholder="Ingresa el ID para buscar">
+                        <button type="button" class="btn btn-outline-secondary" id="buscarProductoBtn">Buscar</button>
+                    </div>
+                </div>
               <div class="mb-3">
                 <label for="nombreProducto" class="form-label">NOMBRE DEL PRODUCTO</label>
                 <input type="text" class="form-control" id="nombreProducto" required>
@@ -80,15 +94,15 @@
               <div class="mb-3">
                 <label for="categoria" class="form-label">CATEGORÍA</label>
                 <select class="form-select" id="categoria" required>
-                    <option selected disabled>Seleccione la categoría...</option>
-                    <option>Juegos de Mesa</option>
-                    <option>Consolas</option>
-                    <option>Computadores Gamer</option>
-                    <option>Sillas Gamer</option>
-                    <option>Accesorios</option>
-                    <option>Ropa</option>
-                    <option>Mouse</option>
-                    <option>Mousepads</option>
+                    <option value="">Seleccione la categoría...</option>
+                    <option value="JM">Juegos de Mesa</option>
+                    <option value="CO">Consolas</option>
+                    <option value="PC">Computadores Gamer</option>
+                    <option value="SG">Sillas Gamer</option>
+                    <option value="AC">Accesorios</option>
+                    <option value="RP">Ropa</option>
+                    <option value="MS">Mouse</option>
+                    <option value="MP">Mousepads</option>
                 </select>
               </div>
               <div class="mb-3">
@@ -103,13 +117,31 @@
                 <label for="imagen" class="form-label">IMAGEN DEL PRODUCTO (URL)</label>
                 <input type="url" class="form-control" id="imagen" required>
               </div>
-              <button type="submit" class="btn btn-dark w-100 mt-2">REGISTRAR PRODUCTO</button>
+              <button type="submit" class="btn btn-dark w-100 mt-2">Actualizar Producto</button>
             </form>
-          </div>
+          </article>
         </section>
       </main>
     </div>
   </div>
+  <!-- FOOTER -->
+  <footer class="footer-dark border-top py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div>
+        <span class="fw-bold">Level-Up Gamer</span> &copy; 2025. Todos los derechos reservados.
+      </div>
+      <div>
+        <a href="#" class="me-2">Category 1</a>
+        <a href="#" class="me-2">Category 2</a>
+        <a href="#">Category 3</a>
+      </div>
+      <form class="d-flex align-items-center">
+        <input type="email" class="form-control form-control-sm me-2" placeholder="Enter Email" />
+        <button class="btn btn-dark btn-sm">Suscribirse</button>
+      </form>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="src/Buscarid.js" type="module"></script>
 </body>
 </html>

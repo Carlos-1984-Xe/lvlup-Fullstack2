@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Level-Up Blogs</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../src/styles/style.css" />
+  <style>
+    /* Small helper to visually hide inactive article while keeping accessible for screen readers */
+    .hidden-article { display: none; }
+  </style>
+</head>
+<body class="bg-dark text-light">
+  <div id="include-header"></div>
+
+  <!-- CONTROLES PARA SELECCIÓN -->
+  <main>
+    <div class="container py-4">
+      <div class="d-flex gap-2 justify-content-center mb-3">
+        <button id="btnPost1" class="btn btn-outline-success" aria-pressed="false">Juegos de Mesa</button>
+        <button id="btnPost2" class="btn btn-outline-success" aria-pressed="false">PC Gamer Económico</button>
+      </div>
+    </div>
+
+    <!-- ARTÍCULOS: se cargan desde fragments para mantenimiento -->
+    <section class="py-5">
+      <div class="container">
+        <div id="articleContainer" class="bg-black rounded shadow p-4 border border-success" style="min-height:200px; transition: opacity .35s ease; opacity:1"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (copiado de los otros blogs) -->
+  <footer class="footer-dark border-top py-4 mt-5 bg-black text-light">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div>
+        <span class="fw-bold text-success">Level-Up Blogs</span> &copy; 2025. Todos los derechos reservados.
+      </div>
+      <div>
+        <a href="#" class="me-2 text-success">Category 1</a>
+        <a href="#" class="me-2 text-success">Category 2</a>
+        <a href="#" class="text-success">Category 3</a>
+      </div>
+      <form class="d-flex align-items-center">
+        <input type="email" class="form-control form-control-sm me-2 bg-dark text-light border-success" placeholder="Enter Email" />
+        <button class="btn btn-success btn-sm">Suscribirse</button>
+      </form>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Carga dinámica de posts desde fragments para facilitar mantenimiento
+    (function(){
+      const container = document.getElementById('articleContainer');
+      const btn1 = document.getElementById('btnPost1');
+      const btn2 = document.getElementById('btnPost2');
+
+      function setActiveButton(n){
+        if(n===1){
+          btn1.classList.remove('btn-outline-success'); btn1.classList.add('btn-success'); btn1.setAttribute('aria-pressed','true');
+          btn2.classList.remove('btn-success'); btn2.classList.add('btn-outline-success'); btn2.setAttribute('aria-pressed','false');
+        } else {
+          btn2.classList.remove('btn-outline-success'); btn2.classList.add('btn-success'); btn2.setAttribute('aria-pressed','true');
+          btn1.classList.remove('btn-success'); btn1.classList.add('btn-outline-success'); btn1.setAttribute('aria-pressed','false');
+        }
+      }
+
+      async function loadPost(n){
+        const path = `posts/post${n}.html`;
+        try{
+          // Fade out
+          container.style.opacity = 0;
+          const res = await fetch(path, {cache: 'no-cache'});
+          if(!res.ok) throw new Error('No se pudo cargar el post');
+          const html = await res.text();
+          // Small delay to allow fade-out
+          setTimeout(()=>{
+            container.innerHTML = html;
+            container.style.opacity = 1;
+            setActiveButton(n);
+            history.replaceState(null,'',`?post=${n}`);
+          }, 180);
+        }catch(err){
+          container.innerHTML = `<div class="text-danger">Error al cargar el contenido. Intenta recargar la página.</div>`;
+          container.style.opacity = 1;
+          console.error(err);
+        }
+      }
+
+      // Leer parámetro post de la URL
+      const params = new URLSearchParams(window.location.search);
+      const postParam = parseInt(params.get('post'));
+      loadPost(postParam===2?2:1);
+
+      btn1.addEventListener('click', ()=> loadPost(1));
+      btn2.addEventListener('click', ()=> loadPost(2));
+    })();
+  </script>
+  <script src="../includes/load-includes.js"></script>
+</body>
+</html>

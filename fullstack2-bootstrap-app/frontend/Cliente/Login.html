@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio de Sesión | Level-Up Gamer</title>
+  <!-- CSS/Bootstrap se inyectan desde includes/load-includes.js -->
+</head>
+<body>
+  <div id="include-header"></div>
+
+  <main>
+    <!-- SECTION -->
+    <section class="container d-flex flex-column align-items-center justify-content-center" style="min-height: 80vh;">
+  <img src="../img/Logo Lvl Up.PNG" alt="Level-Up Gamer Logo" width="120" height="120" class="mb-3" />
+      <h2 class="fw-bold text-success mb-4 text-center">Level-Up Gamer</h2>
+      <!-- ARTICLE: Card con el formulario de login -->
+      <article class="card bg-dark text-light shadow-lg p-4" style="max-width: 400px; width: 100%;">
+        <h5 class="fw-bold mb-3 text-success">Inicio de sesión</h5>
+        <form>
+          <div class="mb-3">
+            <label for="correo" class="form-label">CORREO</label>
+            <input type="email" class="form-control bg-dark text-light border-secondary" id="correo" required>
+          </div>
+          <div class="mb-3">
+            <label for="contraseña" class="form-label">CONTRASEÑA</label>
+            <input type="password" class="form-control bg-dark text-light border-secondary" id="contraseña" required>
+          </div>
+          <button type="submit" class="btn btn-dark w-100 mt-2">Iniciar sesión</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <div id="include-footer"></div>
+  <script src="../includes/load-includes.js"></script>
